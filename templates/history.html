@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <!--There are three empty cell in the first header-->
+                    <th>Buy/Sell</th>
+                    <th>Symbol</th>
+                    <th>@Price</th>
+                    <th>Shares</th>
+                    <th>Date/time</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for h in history %}
+                <tr>
+                    <td>{{ h.status }}</td>
+                    <td>{{ h.symbol }}</td>
+                    <td>{{ h.sharePrice }}</td>
+                    <td>{{ h.shares }}</td>
+                    <td>{{ h.date }}</td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+
+        </table>
+
+{% endblock %}
